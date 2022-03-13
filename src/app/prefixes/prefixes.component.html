@@ -1,0 +1,47 @@
+<div class="container-prefixes">
+
+    <div class="container-titles">
+
+        <h1>{{title}}</h1>
+        <h2>{{description}}</h2>
+
+    </div>
+
+    <div class="container-input">
+
+        <input type="text" maxlength="4" [(ngModel)]="choice" placeholder="Enter a prefixes, start with +">
+
+        <input type="text" [(ngModel)]="myNumber" placeholder="Enter your number">
+
+    </div>
+
+    <div class="container-result">
+
+        <h4>{{choice}}{{myNumber | prefixesnumber }}</h4>
+
+    </div>
+
+    <div class="container-country">
+
+        <h3>Your Country</h3>
+
+        <ul *ngFor="let c of countries">
+
+            <li *ngIf="c.prefixe == choice">
+
+                {{c.country}}
+
+            </li>
+
+            <!-- <li>
+                // To debug
+                {{c.prefixe == choice ? c.country : '
+                Enter a valid prefix'}}
+
+            </li> -->
+
+        </ul>
+
+    </div>
+
+</div>
